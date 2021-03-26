@@ -19,7 +19,7 @@ const investorSchema = new Schema({
     type: Date,
     required: true,
   },
-  user: {
+  reference: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
