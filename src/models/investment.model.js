@@ -3,15 +3,23 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const investorSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
   amount: {
-    type: number,
+    type: Number,
     required: true,
   },
-  transaction: {
-    type: number,
+  startdate: {
+    type: Date,
     required: true,
   },
-  Investor: {
+  enddate: {
+    type: Date,
+    required: true,
+  },
+  reference: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },

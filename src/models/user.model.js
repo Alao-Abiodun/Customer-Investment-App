@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
+  investors: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Investor',
   },
 });
 

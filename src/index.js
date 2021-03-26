@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const { MONGO_URI } = process.env;
+import userRoute from './routes/user.route';
+import investorRoute from './routes/investor.route';
 
 mongoose
   .connect(
@@ -16,6 +17,13 @@ mongoose
 const app = express();
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Application');
+});
+
+app.use('/api/v1', userRoute);
+app.use('/api/v1', investorRoute);
 
 const port = process.env.PORT || 2020;
 
