@@ -13,11 +13,11 @@ const investorSchema = new Schema({
   },
   startdate: {
     type: Date,
-    required: true,
+    default: Date.now,
   },
   enddate: {
     type: Date,
-    required: true,
+    default: Date.now,
   },
   reference: {
     type: mongoose.Schema.Types.ObjectId,

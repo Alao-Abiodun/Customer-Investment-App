@@ -3,6 +3,6 @@ import investorController from '../controllers/investor.controller';
 
 const router = Router();
 
-router.post('/newInvestor', investorController.addInvestor);
+router.post('/investor', investorController.addInvestor);
 
 export default router;

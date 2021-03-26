@@ -2,13 +2,20 @@ import Investor from '../models/investment.model';
 
 class InvestorController {
   async addInvestor(req, res) {
-    const { name, amount, startdate, enddate } = req.body;
-    const newInvestor = new Investor({ name, amount, startdate, enddate });
-    const investor = await newInvestor.save();
-    return res.status(201).json({
-      message: success,
-      investor,
-    });
+    try {
+      const { name, amount } = req.body;
+      const newInvestor = new Investor({ name, amount });
+      const investor = await newInvestor.save();
+      return res.status(201).json({
+        message: 'success',
+        investor,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json({
+        message: error,
+      });
+    }
   }
 }
 
